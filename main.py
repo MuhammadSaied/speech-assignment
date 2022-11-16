@@ -1,13 +1,14 @@
 import pyttsx3
 import PyPDF2
-book = open('the_cooks_wedding_and_other_stories._the_tales_of_chekhov_xii.pdf', 'rb')
+book = open('Atomic_Habits.pdf', 'rb')
 pdfReader = PyPDF2.PdfFileReader(book)
 pages = pdfReader.numPages
 print(pages)
 
 speaker = pyttsx3.init()
-for num in range(1,140):
-    page = pdfReader.getPage(1)
+for num in range(7,9):
+    page = pdfReader.getPage(7)
     text = page.extractText()
     speaker.say(text)
     speaker.runAndWait()
+
